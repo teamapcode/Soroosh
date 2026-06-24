@@ -1,0 +1,1139 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- ===== SEO & Open Graph ===== -->
+    <title>Soroosh Peyman - Metallurgy & Materials Engineering</title>
+    <meta name="description" content="Soroosh Peyman, Metallurgy and Materials Engineering student at Mohajer Industrial University of Isfahan.">
+    <meta name="keywords" content="metallurgy, materials, casting, heat treatment, microstructure, corrosion, Soroosh Peyman">
+    <meta name="author" content="Soroosh Peyman">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="Soroosh Peyman - Metallurgy & Materials Engineering">
+    <meta property="og:description" content="Metallurgy and Materials Engineering student - interested in microstructure, corrosion, and mechanical properties">
+    <meta property="og:image" content="https://your-domain.com/images/soroosh-og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://your-domain.com">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Soroosh Peyman - Metallurgy & Materials Engineering">
+    <meta name="twitter:description" content="Metallurgy and Materials Engineering student">
+    <meta name="twitter:image" content="https://your-domain.com/images/soroosh-og-image.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔬</text></svg>">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔬</text></svg>">
+
+    <!-- ===== EmailJS SDK ===== -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+
+    <style>
+        /* ============================================================
+           RESET & VARIABLES
+           ============================================================ */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #0a1f3a;
+            --primary-light: #14375f;
+            --accent: #00b4d8;
+            --accent-glow: #00b4d855;
+            --bg-dark: #0b1320;
+            --bg-card: #121e30;
+            --text-light: #e8f0fe;
+            --text-muted: #8aa4c8;
+            --radius: 20px;
+            --shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            --transition: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-light);
+            min-height: 100vh;
+            padding: 20px;
+            line-height: 1.8;
+            background-image: 
+                radial-gradient(ellipse at 10% 20%, rgba(0, 180, 216, 0.05) 0%, transparent 50%),
+                radial-gradient(ellipse at 90% 80%, rgba(0, 180, 216, 0.03) 0%, transparent 50%);
+        }
+
+        body.en {
+            direction: ltr;
+            text-align: left;
+        }
+        body.fa {
+            direction: rtl;
+            text-align: right;
+        }
+
+        /* ============================================================
+           SCROLLBAR
+           ============================================================ */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--bg-dark);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--accent);
+            border-radius: 10px;
+        }
+
+        /* ============================================================
+           CONTAINER
+           ============================================================ */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        /* ============================================================
+           GLASS HEADER
+           ============================================================ */
+        .glass-header {
+            background: rgba(18, 30, 48, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(0, 180, 216, 0.15);
+            border-radius: var(--radius);
+            padding: 20px 30px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: var(--shadow);
+            margin-bottom: 30px;
+            transition: var(--transition);
+        }
+        .glass-header:hover {
+            border-color: rgba(0, 180, 216, 0.3);
+        }
+
+        .logo h1 {
+            font-size: 30px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #ffffff 0%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.5px;
+        }
+        .logo span {
+            background: linear-gradient(135deg, var(--accent), #0077b6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .lang-switch {
+            display: flex;
+            gap: 8px;
+        }
+        .lang-btn {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-muted);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        .lang-btn:hover {
+            background: rgba(0, 180, 216, 0.15);
+            color: #fff;
+        }
+        .lang-btn.active {
+            background: var(--accent);
+            color: #fff;
+            border-color: var(--accent);
+            box-shadow: 0 0 30px var(--accent-glow);
+        }
+
+        /* ============================================================
+           NAVIGATION - GLASS
+           ============================================================ */
+        .glass-nav {
+            background: rgba(18, 30, 48, 0.5);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(0, 180, 216, 0.08);
+            border-radius: var(--radius);
+            padding: 12px 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px 10px;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow);
+        }
+        .glass-nav a {
+            text-decoration: none;
+            color: var(--text-muted);
+            font-weight: 600;
+            padding: 8px 18px;
+            border-radius: 50px;
+            transition: var(--transition);
+            font-size: 15px;
+            position: relative;
+        }
+        .glass-nav a:hover {
+            color: #fff;
+            background: rgba(0, 180, 216, 0.1);
+        }
+        .glass-nav a.active {
+            color: #fff;
+            background: var(--accent);
+            box-shadow: 0 0 30px var(--accent-glow);
+        }
+        .glass-nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: var(--transition);
+            transform: translateX(-50%);
+        }
+        .glass-nav a:hover::after {
+            width: 60%;
+        }
+
+        /* ============================================================
+           PAGE CONTENT
+           ============================================================ */
+        .page {
+            display: none;
+            animation: fadeSlide 0.6s ease;
+        }
+        .page.active {
+            display: block;
+        }
+
+        @keyframes fadeSlide {
+            0% { opacity: 0; transform: translateY(30px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInUp {
+            0% { opacity: 0; transform: translateY(40px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ============================================================
+           GLASS CARD
+           ============================================================ */
+        .glass-card {
+            background: rgba(18, 30, 48, 0.6);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(0, 180, 216, 0.08);
+            border-radius: var(--radius);
+            padding: 30px 35px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        .glass-card:hover {
+            border-color: rgba(0, 180, 216, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .glass-card h2 {
+            font-size: 30px;
+            margin-bottom: 18px;
+            background: linear-gradient(135deg, #fff, var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            border-right: 4px solid var(--accent);
+            padding-right: 16px;
+        }
+        body.en .glass-card h2 {
+            border-right: none;
+            border-left: 4px solid var(--accent);
+            padding-right: 0;
+            padding-left: 16px;
+        }
+
+        .glass-card h3 {
+            color: var(--accent);
+            margin-top: 24px;
+            margin-bottom: 10px;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .glass-card ul {
+            list-style: none;
+            padding: 0;
+        }
+        .glass-card ul li {
+            padding: 6px 0 6px 28px;
+            position: relative;
+            color: var(--text-light);
+        }
+        .glass-card ul li::before {
+            content: '▸';
+            position: absolute;
+            right: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+        body.en .glass-card ul li {
+            padding: 6px 28px 6px 0;
+        }
+        body.en .glass-card ul li::before {
+            right: auto;
+            left: 0;
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(0, 180, 216, 0.12);
+            color: var(--accent);
+            padding: 2px 16px;
+            border-radius: 50px;
+            font-size: 13px;
+            border: 1px solid rgba(0, 180, 216, 0.15);
+            margin: 3px 4px 3px 0;
+        }
+
+        /* ============================================================
+           PROFILE IMAGE
+           ============================================================ */
+        .profile-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .profile-avatar {
+            flex-shrink: 0;
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-light), var(--accent));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 70px;
+            box-shadow: 0 0 60px var(--accent-glow);
+            border: 3px solid rgba(0, 180, 216, 0.3);
+            transition: var(--transition);
+            animation: float 6s ease-in-out infinite;
+            overflow: hidden;
+        }
+        .profile-avatar:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 80px var(--accent-glow);
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-12px); }
+        }
+        .profile-avatar img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .profile-text {
+            flex: 1;
+        }
+        .profile-text h2 {
+            margin-top: 0;
+        }
+
+        /* ============================================================
+           ARTICLE SPECIAL
+           ============================================================ */
+        .article-special {
+            background: rgba(0, 180, 216, 0.04);
+            border: 1px solid rgba(0, 180, 216, 0.12);
+            border-radius: var(--radius);
+            padding: 25px 30px;
+            margin-top: 20px;
+            transition: var(--transition);
+        }
+        .article-special:hover {
+            background: rgba(0, 180, 216, 0.07);
+            border-color: rgba(0, 180, 216, 0.25);
+        }
+        .article-special h3 {
+            color: #fff;
+            font-size: 22px;
+        }
+        .article-special h4 {
+            color: var(--accent);
+            margin-top: 18px;
+            margin-bottom: 6px;
+        }
+        .article-special .formula {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 12px 20px;
+            border-radius: 12px;
+            font-family: 'Courier New', monospace;
+            color: var(--accent);
+            text-align: center;
+            margin: 10px 0;
+            border: 1px solid rgba(0, 180, 216, 0.1);
+        }
+
+        /* ============================================================
+           TICKET FORM
+           ============================================================ */
+        .ticket-form {
+            background: rgba(0, 0, 0, 0.25);
+            padding: 25px;
+            border-radius: var(--radius);
+            margin-top: 20px;
+            border: 1px solid rgba(0, 180, 216, 0.06);
+        }
+        .ticket-form label {
+            font-weight: 600;
+            display: block;
+            margin-top: 14px;
+            margin-bottom: 4px;
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+        .ticket-form input,
+        .ticket-form textarea {
+            width: 100%;
+            padding: 14px 18px;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 14px;
+            font-size: 15px;
+            background: rgba(0, 0, 0, 0.3);
+            color: #fff;
+            transition: var(--transition);
+        }
+        .ticket-form input:focus,
+        .ticket-form textarea:focus {
+            border-color: var(--accent);
+            outline: none;
+            box-shadow: 0 0 0 4px var(--accent-glow);
+            background: rgba(0, 0, 0, 0.4);
+        }
+        .ticket-form input::placeholder,
+        .ticket-form textarea::placeholder {
+            color: var(--text-muted);
+            opacity: 0.5;
+        }
+        .ticket-form button {
+            background: var(--accent);
+            color: #fff;
+            border: none;
+            padding: 14px 40px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: var(--transition);
+            box-shadow: 0 0 30px var(--accent-glow);
+        }
+        .ticket-form button:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 50px var(--accent-glow);
+        }
+        .ticket-form button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .ticket-list {
+            margin-top: 30px;
+            background: rgba(0, 0, 0, 0.2);
+            padding: 18px 22px;
+            border-radius: var(--radius);
+            border: 1px solid rgba(0, 180, 216, 0.06);
+        }
+        .ticket-item {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+            padding: 14px 0;
+        }
+        .ticket-item:last-child {
+            border: none;
+        }
+        .ticket-item strong {
+            color: var(--accent);
+        }
+        .empty-ticket {
+            color: var(--text-muted);
+            font-style: italic;
+        }
+
+        /* ============================================================
+           FOOTER
+           ============================================================ */
+        footer {
+            margin-top: 40px;
+            padding: 20px 0;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 14px;
+            border-top: 1px solid rgba(255, 255, 255, 0.04);
+        }
+
+        /* ============================================================
+           TOAST NOTIFICATION
+           ============================================================ */
+        .toast {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: rgba(0, 180, 216, 0.95);
+            color: #fff;
+            padding: 16px 28px;
+            border-radius: 16px;
+            font-weight: 600;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+            transform: translateY(120px);
+            opacity: 0;
+            transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            z-index: 9999;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .toast.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        .toast.error {
+            background: rgba(220, 50, 50, 0.95);
+        }
+
+        /* ============================================================
+           RESPONSIVE
+           ============================================================ */
+        @media (max-width: 768px) {
+            .glass-header {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 16px;
+                padding: 18px;
+            }
+            .lang-switch {
+                align-self: flex-start;
+            }
+            .profile-section {
+                flex-direction: column;
+                text-align: center;
+            }
+            .profile-avatar {
+                width: 120px;
+                height: 120px;
+                font-size: 50px;
+            }
+            .glass-card {
+                padding: 20px;
+            }
+            .glass-nav a {
+                font-size: 13px;
+                padding: 6px 14px;
+            }
+            .container {
+                padding: 0;
+            }
+            body {
+                padding: 12px;
+            }
+            .glass-card h2 {
+                font-size: 24px;
+            }
+        }
+        @media (max-width: 480px) {
+            .glass-nav {
+                gap: 4px;
+            }
+            .glass-nav a {
+                font-size: 12px;
+                padding: 4px 10px;
+            }
+            .logo h1 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="app">
+
+        <!-- ===== HEADER ===== -->
+        <header class="glass-header">
+            <div class="logo">
+                <h1>Soroosh <span>Peyman</span></h1>
+            </div>
+            <div class="lang-switch">
+                <button class="lang-btn active" data-lang="fa">فارسی</button>
+                <button class="lang-btn" data-lang="en">English</button>
+            </div>
+        </header>
+
+        <!-- ===== NAVIGATION ===== -->
+        <nav class="glass-nav" id="mainNav">
+            <a href="#" data-page="home" class="active">🏠 Home</a>
+            <a href="#" data-page="resume">📄 Resume</a>
+            <a href="#" data-page="articles">📝 Articles</a>
+            <a href="#" data-page="privacy">🔒 Privacy</a>
+            <a href="#" data-page="contact">📬 Contact</a>
+        </nav>
+
+        <!-- ==========================================================
+        PAGE: HOME
+        ========================================================== -->
+        <div id="page-home" class="page active">
+            <div class="glass-card">
+                <div class="profile-section">
+                    <div class="profile-avatar">
+                        <!-- 👇 عکس پروفایل: name: profile.jpg -->
+                        <img src="images/profile.jpg" alt="Soroosh Peyman">
+                    </div>
+                    <div class="profile-text">
+                        <h2 data-key="home_title">Hello, I'm Soroosh Peyman</h2>
+                        <p data-key="home_intro" style="font-size:17px; color:var(--text-light);">
+                            Metallurgy and Materials Engineering student at Mohajer Industrial University of Isfahan.
+                            Interested in casting, heat treatment, microstructure, corrosion, and mechanical properties of metals.
+                        </p>
+                    </div>
+                </div>
+                <div style="background:rgba(0,180,216,0.05); border-radius:16px; padding:18px; margin-top:10px; border-left:3px solid var(--accent);">
+                    <p style="margin:0;">
+                        🔬 <strong data-key="home_interest">Special interest:</strong>
+                        <span data-key="home_interest_text">Investigating microstructure and its relation to mechanical properties in light alloys.</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==========================================================
+        PAGE: RESUME
+        ========================================================== -->
+        <div id="page-resume" class="page">
+            <div class="glass-card">
+                <h2 data-key="resume_title">📄 Resume</h2>
+
+                <h3 data-key="resume_personal">👤 Personal Info</h3>
+                <ul>
+                    <li><strong data-key="resume_name">Name:</strong> Soroosh Peyman</li>
+                    <li><strong data-key="resume_major">Major:</strong> Metallurgy and Materials Engineering</li>
+                    <li><strong data-key="resume_univ">University:</strong> Mohajer Industrial University of Isfahan</li>
+                    <li><strong data-key="resume_degree">Degree:</strong> Bachelor's</li>
+                </ul>
+
+                <h3>🛠️ <span data-key="resume_skills">Skills</span></h3>
+                <ul>
+                    <li data-key="skill1">Microstructure analysis (Optical Microscopy, SEM)</li>
+                    <li data-key="skill2">Familiar with heat treatment</li>
+                    <li data-key="skill3">Mechanical testing (Hardness, Tensile, Impact)</li>
+                    <li data-key="skill4">Familiar with extractive metallurgy</li>
+                    <li data-key="skill5">Basic modeling with ANSYS and SolidWorks</li>
+                    <li data-key="skill6">Familiar with corrosion and material protection</li>
+                </ul>
+
+                <h3>📚 <span data-key="resume_courses">Courses Taken</span></h3>
+                <ul>
+                    <li data-key="course1">Materials Thermodynamics</li>
+                    <li data-key="course2">Mechanical Properties of Materials</li>
+                    <li data-key="course3">Physical Metallurgy</li>
+                    <li data-key="course4">Heat Treatment</li>
+                    <li data-key="course5">Casting</li>
+                    <li data-key="course6">Metal Forming</li>
+                </ul>
+
+                <h3>📌 <span data-key="resume_projects">Projects</span></h3>
+                <ul>
+                    <li data-key="proj1">Microstructure study of low-carbon steel after heat treatment</li>
+                    <li data-key="proj2">Mechanical behavior analysis of Aluminum alloy 6061</li>
+                    <li data-key="proj3">3D modeling of an industrial part in SolidWorks</li>
+                </ul>
+
+                <h3>🧪 <span data-key="resume_research">Research Interests</span></h3>
+                <ul>
+                    <li data-key="res1">Advanced materials</li>
+                    <li data-key="res2">Nanomaterials</li>
+                    <li data-key="res3">Light alloys</li>
+                    <li data-key="res4">Corrosion and coatings</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ==========================================================
+        PAGE: ARTICLES (با مقاله کامل)
+        ========================================================== -->
+        <div id="page-articles" class="page">
+            <div class="glass-card">
+                <h2 data-key="articles_title">📝 Articles & Notes</h2>
+                <p data-key="articles_desc" style="color:var(--text-muted);">
+                    A collection of my scientific articles, notes, and analyses in materials engineering and metallurgy.
+                </p>
+
+                <!-- ===== مقاله کامل ===== -->
+                <div class="article-special">
+                    <h3>🔬 Effect of Microstructure on Mechanical Properties of Metals: From Grain to Fracture</h3>
+                    
+                    <p style="color:var(--text-light); margin-top:10px;">
+                        The microstructure of metals is one of the most fundamental factors determining their mechanical behavior. Every small change in grain size, existing phases, precipitate distribution, or cooling rate can dramatically alter the final properties of the material. In materials engineering, understanding the relationship between microstructure and mechanical properties is not only a scientific necessity but also the basis for designing new alloys and optimizing industrial processes.
+                    </p>
+
+                    <h4>1. Grain Size: The Hall-Petch Law</h4>
+                    <p>Grain boundaries act as natural barriers to dislocation movement. The smaller the grain size, the more grain boundaries there are, and the higher the material's resistance to deformation.</p>
+                    <div class="formula">σ<sub>y</sub> = σ<sub>0</sub> + k · d<sup>−1/2</sup></div>
+                    <p>This relationship shows that grain refinement is one of the most effective methods for increasing the strength of metals. This is why processes like cold rolling, controlled recrystallization, and quenching-tempering are highly important in industry.</p>
+
+                    <h4>2. Phases and Phase Transformations</h4>
+                    <p>The presence of different phases in an alloy can completely change its properties. For example:</p>
+                    <p>
+                        <span class="badge">Ferrite</span> → Softness and ductility &nbsp;|&nbsp;
+                        <span class="badge">Pearlite</span> → Moderate strength &nbsp;|&nbsp;
+                        <span class="badge">Martensite</span> → Very high strength but brittle &nbsp;|&nbsp;
+                        <span class="badge">Bainite</span> → Excellent balance of strength and toughness
+                    </p>
+                    <p>Precise control of temperature and time in heat treatment enables the engineering of these phases.</p>
+
+                    <h4>3. Precipitates and Precipitation Hardening</h4>
+                    <p>In many alloys, the main strength comes from precipitation hardening. Fine and uniform precipitates restrict dislocation movement and increase strength.</p>
+                    <p>
+                        <span class="badge">2000 series Aluminum alloys</span>
+                        <span class="badge">7000 series Aluminum alloys</span>
+                        <span class="badge">Nickel-based superalloys</span>
+                        <span class="badge">Maraging steels</span>
+                    </p>
+                    <p>Controlling the size, distribution, and density of precipitates is one of the most sensitive aspects of advanced material design.</p>
+
+                    <h4>4. Texture: Grain Orientation and Anisotropic Behavior</h4>
+                    <p>In forming processes such as rolling, drawing, or extrusion, grains become oriented. This orientation causes material properties to differ in various directions.</p>
+                    <p>
+                        <span class="badge">Aluminum sheets with strong texture</span> → Higher strength in rolling direction<br>
+                        <span class="badge">Electrical steels with Goss texture</span> → Reduced magnetic losses
+                    </p>
+                    <p>Texture is one of the most complex yet important factors in property control.</p>
+
+                    <h4>5. Fracture: The Final Result of Microstructure</h4>
+                    <p>Fracture behavior of a metal provides a clear image of its microstructure. Two main types of fracture:</p>
+                    <p>
+                        <strong>Ductile Fracture:</strong> Void formation, void growth, coalescence and rupture — typically seen in fine-grained materials with high toughness.<br>
+                        <strong>Brittle Fracture:</strong> Without noticeable deformation, flat fracture surface, rapid crack propagation — occurs in materials with high martensite content, high impurities, or at low temperatures.
+                    </p>
+
+                    <div style="margin-top:18px; padding:16px; background:rgba(0,180,216,0.06); border-radius:14px; border-right:3px solid var(--accent);">
+                        <p style="margin:0; font-style:italic; color:var(--text-light);">
+                            🧠 Microstructure is the hidden language of metals. Every grain, every boundary, every precipitate, and every phase plays a precise and determining role in the mechanical behavior of the material. Materials engineering means understanding this language and transforming it into desired properties.
+                        </p>
+                    </div>
+                </div>
+
+                <div style="margin-top:25px;">
+                    <h4 style="color:var(--accent);">📄 Other Articles</h4>
+                    <ul>
+                        <li><strong data-key="art1_title">Investigation of heat treatment effect on microstructure of CK45 steel</strong> — <span data-key="art1_desc" style="color:var(--text-muted);">Summary of a lab project</span></li>
+                        <li><strong data-key="art2_title">Comparison of mechanical properties of 7xxx and 6xxx aluminum alloys</strong> — <span data-key="art2_desc" style="color:var(--text-muted);">Literature review and data analysis</span></li>
+                        <li><strong data-key="art3_title">Review of modern anti-corrosion coating methods</strong> — <span data-key="art3_desc" style="color:var(--text-muted);">Practical note for industry</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==========================================================
+        PAGE: PRIVACY
+        ========================================================== -->
+        <div id="page-privacy" class="page">
+            <div class="glass-card">
+                <h2 data-key="privacy_title">🔒 Privacy Policy</h2>
+                <p data-key="privacy_text1" style="font-size:17px;">
+                    I, Soroosh Peyman, am committed to protecting the personal information of users of this site.
+                </p>
+                <p data-key="privacy_text2">
+                    This website is created solely to introduce my scientific and professional activities and does not collect or store any user information.
+                </p>
+                <p data-key="privacy_text3">
+                    Information from the contact form is only used for responses and will not be shared with any third party.
+                </p>
+                <div style="background:rgba(0,180,216,0.06); padding:16px; border-radius:16px; margin-top:16px; border:1px solid rgba(0,180,216,0.1);">
+                    ✅ <span data-key="privacy_commit">This site is designed with security principles in mind.</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==========================================================
+        PAGE: CONTACT + TICKET (با EmailJS)
+        ========================================================== -->
+        <div id="page-contact" class="page">
+            <div class="glass-card">
+                <h2 data-key="contact_title">📬 Contact Me</h2>
+                <p data-key="contact_desc" style="color:var(--text-muted);">
+                    For scientific collaborations, university projects, or questions related to materials engineering, feel free to reach out.
+                </p>
+
+                <div class="ticket-form">
+                    <h3 style="color:var(--accent); margin-top:0;">📩 <span data-key="ticket_title">Send a Ticket</span></h3>
+                    <label data-key="ticket_name_label">Full Name</label>
+                    <input type="text" id="ticketName" placeholder="Your full name">
+
+                    <label data-key="ticket_email_label">Email</label>
+                    <input type="email" id="ticketEmail" placeholder="your@email.com">
+
+                    <label data-key="ticket_subject_label">Subject</label>
+                    <input type="text" id="ticketSubject" placeholder="Subject of your message">
+
+                    <label data-key="ticket_msg_label">Message</label>
+                    <textarea id="ticketMessage" rows="4" placeholder="Your message..."></textarea>
+
+                    <button id="sendTicketBtn" data-key="ticket_send_btn">🚀 Send Ticket</button>
+                </div>
+
+                <div class="ticket-list">
+                    <h4 style="color:var(--accent); margin-top:0;">📋 <span data-key="ticket_history">Submitted Tickets</span></h4>
+                    <div id="ticketContainer">
+                        <p class="empty-ticket" data-key="ticket_empty">No tickets submitted yet.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== FOOTER ===== -->
+        <footer>
+            <p>© 2025 Soroosh Peyman — <span data-key="footer_text">Designed with ❤️ for sharing science</span></p>
+        </footer>
+    </div>
+
+    <!-- ===== TOAST ===== -->
+    <div id="toast" class="toast"></div>
+
+    <!-- ============================================================
+    JAVASCRIPT
+    ============================================================ -->
+    <script>
+        (function() {
+            // ===== دیکشنری =====
+            const translations = {
+                fa: {
+                    home_title: "سلام، من سروش پیمان هستم",
+                    home_intro: "دانشجوی مهندسی متالورژی و مواد در دانشگاه صنعتی مهاجر اصفهان. به حوزه‌های ریخته‌گری، عملیات حرارتی، ریزساختار مواد، خوردگی و خواص مکانیکی فلزات علاقه‌مندم.",
+                    home_interest: "علاقه‌مندی ویژه:",
+                    home_interest_text: "بررسی ریزساختار و ارتباط آن با خواص مکانیکی در آلیاژهای سبک.",
+                    resume_title: "رزومه",
+                    resume_personal: "اطلاعات شخصی",
+                    resume_name: "نام:",
+                    resume_major: "رشته:",
+                    resume_univ: "دانشگاه:",
+                    resume_degree: "مقطع:",
+                    resume_skills: "مهارت‌ها",
+                    skill1: "تحلیل ریزساختار (Optical Microscopy, SEM)",
+                    skill2: "آشنایی با عملیات حرارتی",
+                    skill3: "تست‌های مکانیکی (سختی، کشش، ضربه)",
+                    skill4: "آشنایی با متالورژی استخراجی",
+                    skill5: "مدل‌سازی مقدماتی با ANSYS و SolidWorks",
+                    skill6: "آشنایی با اصول خوردگی و حفاظت از مواد",
+                    resume_courses: "دروس گذرانده",
+                    course1: "ترمودینامیک مواد",
+                    course2: "خواص مکانیکی مواد",
+                    course3: "متالورژی فیزیکی",
+                    course4: "عملیات حرارتی",
+                    course5: "ریخته‌گری",
+                    course6: "شکل‌دهی فلزات",
+                    resume_projects: "پروژه‌ها",
+                    proj1: "بررسی ریزساختار فولاد کم‌کربن پس از عملیات حرارتی",
+                    proj2: "تحلیل رفتار مکانیکی آلیاژ آلومینیوم 6061",
+                    proj3: "طراحی مدل سه‌بعدی قطعه صنعتی در SolidWorks",
+                    resume_research: "علایق پژوهشی",
+                    res1: "مواد پیشرفته",
+                    res2: "نانو مواد",
+                    res3: "آلیاژهای سبک",
+                    res4: "خوردگی و پوشش‌ها",
+                    articles_title: "مقالات و یادداشت‌ها",
+                    articles_desc: "در این بخش مجموعه‌ای از مقالات، یادداشت‌ها و تحلیل‌های علمی من در حوزه مهندسی مواد و متالورژی قرار می‌گیرد.",
+                    art1_title: "بررسی تأثیر عملیات حرارتی بر ریزساختار فولاد CK45",
+                    art1_desc: "خلاصه‌ای از پروژه آزمایشگاهی",
+                    art2_title: "مقایسه خواص مکانیکی آلیاژهای آلومینیوم 7xxx و 6xxx",
+                    art2_desc: "مرور ادبیات و تحلیل داده‌ها",
+                    art3_title: "مروری بر روش‌های نوین پوشش‌دهی ضدخوردگی",
+                    art3_desc: "یادداشت کاربردی برای صنعت",
+                    privacy_title: "حریم خصوصی",
+                    privacy_text1: "من، سروش پیمان، متعهد هستم که اطلاعات شخصی کاربران این سایت را حفظ کنم.",
+                    privacy_text2: "این وب‌سایت تنها برای معرفی فعالیت‌های علمی و حرفه‌ای من ایجاد شده و هیچ‌گونه اطلاعاتی از کاربران جمع‌آوری یا ذخیره نمی‌کند.",
+                    privacy_text3: "اطلاعات فرم تماس فقط برای پاسخ‌گویی استفاده می‌شود و به هیچ شخص ثالثی منتقل نخواهد شد.",
+                    privacy_commit: "این سایت با رعایت اصول امنیتی طراحی شده است.",
+                    contact_title: "تماس با من",
+                    contact_desc: "برای همکاری‌های علمی، پروژه‌های دانشگاهی یا پرسش‌های مرتبط با مهندسی مواد می‌توانید با من در ارتباط باشید.",
+                    ticket_title: "ارسال تیکت",
+                    ticket_name_label: "نام و نام خانوادگی",
+                    ticket_email_label: "ایمیل",
+                    ticket_subject_label: "موضوع",
+                    ticket_msg_label: "متن پیام",
+                    ticket_send_btn: "ارسال تیکت",
+                    ticket_history: "تیکت‌های ارسال شده",
+                    ticket_empty: "هیچ تیکتی ارسال نشده است.",
+                    footer_text: "طراحی شده با ❤️ برای اشتراک علم"
+                },
+                en: {
+                    home_title: "Hello, I'm Soroosh Peyman",
+                    home_intro: "Metallurgy and Materials Engineering student at Mohajer Industrial University of Isfahan. Interested in casting, heat treatment, microstructure, corrosion, and mechanical properties.",
+                    home_interest: "Special interest:",
+                    home_interest_text: "Investigating microstructure and its relation to mechanical properties in light alloys.",
+                    resume_title: "Resume",
+                    resume_personal: "Personal Info",
+                    resume_name: "Name:",
+                    resume_major: "Major:",
+                    resume_univ: "University:",
+                    resume_degree: "Degree:",
+                    resume_skills: "Skills",
+                    skill1: "Microstructure analysis (Optical Microscopy, SEM)",
+                    skill2: "Familiar with heat treatment",
+                    skill3: "Mechanical testing (Hardness, Tensile, Impact)",
+                    skill4: "Familiar with extractive metallurgy",
+                    skill5: "Basic modeling with ANSYS and SolidWorks",
+                    skill6: "Familiar with corrosion and material protection",
+                    resume_courses: "Courses taken",
+                    course1: "Materials Thermodynamics",
+                    course2: "Mechanical Properties of Materials",
+                    course3: "Physical Metallurgy",
+                    course4: "Heat Treatment",
+                    course5: "Casting",
+                    course6: "Metal Forming",
+                    resume_projects: "Projects",
+                    proj1: "Microstructure study of low-carbon steel after heat treatment",
+                    proj2: "Mechanical behavior analysis of Aluminum alloy 6061",
+                    proj3: "3D modeling of an industrial part in SolidWorks",
+                    resume_research: "Research interests",
+                    res1: "Advanced materials",
+                    res2: "Nanomaterials",
+                    res3: "Light alloys",
+                    res4: "Corrosion and coatings",
+                    articles_title: "Articles & Notes",
+                    articles_desc: "A collection of my scientific articles, notes, and analyses in materials engineering and metallurgy.",
+                    art1_title: "Investigation of heat treatment effect on microstructure of CK45 steel",
+                    art1_desc: "Summary of a lab project",
+                    art2_title: "Comparison of mechanical properties of 7xxx and 6xxx aluminum alloys",
+                    art2_desc: "Literature review and data analysis",
+                    art3_title: "Review of modern anti-corrosion coating methods",
+                    art3_desc: "Practical note for industry",
+                    privacy_title: "Privacy Policy",
+                    privacy_text1: "I, Soroosh Peyman, am committed to protecting the personal information of users.",
+                    privacy_text2: "This website is created solely to introduce my scientific and professional activities.",
+                    privacy_text3: "Contact form information is only used for responses and will not be shared.",
+                    privacy_commit: "This site is designed with security principles.",
+                    contact_title: "Contact Me",
+                    contact_desc: "For scientific collaborations, university projects, or questions related to materials engineering.",
+                    ticket_title: "Send a Ticket",
+                    ticket_name_label: "Full Name",
+                    ticket_email_label: "Email",
+                    ticket_subject_label: "Subject",
+                    ticket_msg_label: "Message",
+                    ticket_send_btn: "Send Ticket",
+                    ticket_history: "Submitted Tickets",
+                    ticket_empty: "No tickets submitted yet.",
+                    footer_text: "Designed with ❤️ for sharing science"
+                }
+            };
+
+            // ===== DOM refs =====
+            const langBtns = document.querySelectorAll('.lang-btn');
+            const navLinks = document.querySelectorAll('#mainNav a');
+            const pages = {
+                home: document.getElementById('page-home'),
+                resume: document.getElementById('page-resume'),
+                articles: document.getElementById('page-articles'),
+                privacy: document.getElementById('page-privacy'),
+                contact: document.getElementById('page-contact')
+            };
+            const translatables = document.querySelectorAll('[data-key]');
+            const toast = document.getElementById('toast');
+
+            // ===== Toast =====
+            let toastTimeout;
+
+            function showToast(message, isError = false) {
+                toast.textContent = message;
+                toast.className = 'toast' + (isError ? ' error' : '');
+                clearTimeout(toastTimeout);
+                // Force reflow
+                void toast.offsetWidth;
+                toast.classList.add('show');
+                toastTimeout = setTimeout(() => {
+                    toast.classList.remove('show');
+                }, 5000);
+            }
+
+            // ===== زبان =====
+            function setLanguage(lang) {
+                langBtns.forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
+                document.body.className = lang === 'en' ? 'en' : 'fa';
+                document.documentElement.lang = lang;
+                document.documentElement.dir = lang === 'en' ? 'ltr' : 'rtl';
+
+                translatables.forEach(el => {
+                    const key = el.dataset.key;
+                    if (translations[lang] && translations[lang][key] !== undefined) {
+                        if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+                            el.placeholder = translations[lang][key];
+                        } else {
+                            el.textContent = translations[lang][key];
+                        }
+                    }
+                });
+                localStorage.setItem('soroush_lang', lang);
+            }
+
+            // ===== صفحه =====
+            function showPage(id) {
+                Object.values(pages).forEach(p => p.classList.remove('active'));
+                if (pages[id]) pages[id].classList.add('active');
+                navLinks.forEach(link => {
+                    link.classList.toggle('active', link.dataset.page === id);
+                });
+            }
+
+            // ===== رویدادها =====
+            langBtns.forEach(btn => {
+                btn.addEventListener('click', () => setLanguage(btn.dataset.lang));
+            });
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    showPage(link.dataset.page);
+                });
+            });
+
+            // ===== EmailJS =====
+            emailjs.init({
+                publicKey: 'service_y73iuph',
+            });
+
+            // ===== تیکت =====
+            const ticketName = document.getElementById('ticketName');
+            const ticketEmail = document.getElementById('ticketEmail');
+            const ticketSubject = document.getElementById('ticketSubject');
+            const ticketMessage = document.getElementById('ticketMessage');
+            const sendBtn = document.getElementById('sendTicketBtn');
+            const container = document.getElementById('ticketContainer');
+
+            function loadTickets() {
+                const stored = localStorage.getItem('soroush_tickets');
+                if (!stored) {
+                    container.innerHTML =
+                    `<p class="empty-ticket" data-key="ticket_empty">No tickets submitted yet.</p>`;
+                    return;
+                }
+                try {
+                    const tickets = JSON.parse(stored);
+                    if (tickets.length === 0) {
+                        container.innerHTML =
+                            `<p class="empty-ticket" data-key="ticket_empty">No tickets submitted yet.</p>`;
+                        return;
+                    }
+                    let html = '';
+                    tickets.slice().reverse().forEach((t, i) => {
+                        html += `
+                            <div class="ticket-item">
+                                <strong>#${i+1}</strong> ${t.name || 'Anonymous'} — ${t.subject || 'No subject'}
+                                <br><small style="color:var(--text-muted);">${t.message || ''}</small>
+                                <br><span style="font-size:12px;color:var(--text-muted);">${t.date || ''}</span>
+                            </div>
+                        `;
+                    });
+                    container.innerHTML = html;
+                } catch {
+                    container.innerHTML = `<p class="empty-ticket">Error loading tickets</p>`;
+                }
+            }
+
+            function addTicketToLocal(name, email, subject, message) {
+                const tickets = JSON.parse(localStorage.getItem('soroush_tickets') || '[]');
+                tickets.push({
+                    name: name.trim() || 'Anonymous',
+                    email: email.trim() || '',
+                    subject: subject.trim() || 'No subject',
+                    message: message.trim() || '',
+                    date: new Date().toLocaleString('en-US')
+                });
+                localStorage.setItem('soroush_tickets', JSON.stringify(tickets));
+                loadTickets();
+            }
+
+            // ===== ارسال تیکت با EmailJS =====
+            sendBtn.addEventListener('click', async function() {
+                const name = ticketName.value.trim();
+                const email = ticketEmail.value.trim();
+                const subject = ticketSubject.value.trim();
+                const message = ticketMessage.value.trim();
+
+                if (!name || !email || !subject || !message) {
+                    showToast('❌ Please fill all fields.', true);
+                    return;
+                }
+                if (!email.includes('@') || !email.includes('.')) {
+                    showToast('❌ Please enter a valid email.', true);
+                    return;
+                }
+
+                // غیرفعال کردن دکمه
+                sendBtn.disabled = true;
+                sendBtn.textContent = '⏳ Sending...';
+
+                try {
+                    const templateParams = {
+                        from_name: name,
+                        from_email: email,
+                        subject: subject,
+                        message: message,
+                        to_email: 'soroush.payman@example.com' // ایمیل شما
+                    };
+
+                    const response = await emailjs.send(
+                        'service_y73iuph', // Service ID شما
+                        'Your', // Template ID شما
+                        templateParams
+                    );
+
+                    console.log('✅ EmailJS success:', response);
+
+                    // ذخیره در localStorage
+                    addTicketToLocal(name, email, subject, message);
+
+                    // پاک کردن فرم
+                    ticketName.value = '';
+                    ticketEmail.value = '';
+                    ticketSubject.value = '';
+                    ticketMessage.value = '';
+
+                    showToast('✅ Your ticket was sent successfully!');
+                } catch (error) {
+                    console.error('❌ EmailJS error:', error);
+                    showToast('❌ Failed to send ticket. Please try again.', true);
+                } finally {
+                    sendBtn.disabled = false;
+                    sendBtn.textContent = '🚀 Send Ticket';
+                }
+            });
+
+            // ===== راه‌اندازی =====
+            const savedLang = localStorage.getItem('soroush_lang') || 'en';
+            setLanguage(savedLang);
+            loadTickets();
+            showPage('home');
+        })();
+    </script>
+</body>
+</html>
